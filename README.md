@@ -1,6 +1,7 @@
-# Next.js & NextUI Template
+# Portfolio
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+Personal Portfolio to showcase all my projects using Next.js 13 (app directory) and NextUI (v2).
+
 
 ## Technologies Used
 
@@ -12,28 +13,8 @@ This is a template for creating applications using Next.js 13 (app directory) an
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
 
-## How to Use
-
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
-```
+## Deployment
+SOON!
 
 ## License
 
