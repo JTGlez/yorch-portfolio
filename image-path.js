@@ -1,0 +1,1 @@
+export {default as logo} from "./public/assets/logos/yorchdev.svg"
