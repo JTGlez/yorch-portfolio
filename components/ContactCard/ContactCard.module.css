@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__upper {
+    width: 110%;
+    height: 4rem;
+    margin-top: -1rem;
+    background-color: black;
+    border: none;
+}
+
+.header__bottom {
+    width: 110%;
+    height: 2.25rem;
+}
+
+.header__avatar {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+
+.avatar__border {
+    display: flex;
+    border: none;
+}
+
+.avatar__border img {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.divider {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}

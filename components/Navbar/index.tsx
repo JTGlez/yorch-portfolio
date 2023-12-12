@@ -22,6 +22,7 @@ import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+	DiscordIcon,
 	GithubIcon,
 	SearchIcon,
 } from "@/components/icons";
@@ -34,7 +35,6 @@ export const Navbar = (params: { lang: string }) => {
 
 	const strings = getLocaleStrings(params.lang);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { theme } = useTheme();
 
 	const siteConfig = {
 		name: "JTGlez",

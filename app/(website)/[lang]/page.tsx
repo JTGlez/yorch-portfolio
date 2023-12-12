@@ -3,9 +3,12 @@ import { Snippet } from "@nextui-org/snippet";
 import { Code } from "@nextui-org/code"
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
+import { title } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { getLocaleStrings } from "../../../localization/index"
+import { ContactCard } from "@/components/ContactCard";
+import { contact } from "@/image-path";
+import Image from "next/image";
 
 export default function Home({ params }: { params: { lang: string } }) {
 
@@ -14,70 +17,46 @@ export default function Home({ params }: { params: { lang: string } }) {
 	return (
 		<div className="grid grid-cols-10 gap-4">
 			{/* Start sections */}
-			<section className="col-span-10 lg:col-span-7 flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-				<div className="flex flex-col max-w-2xl text-center justify-center gap-4">
-					<h1 className={title()}>{strings.Start.title}</h1>
-					<h1 className={title({ color: "blue" })}>{strings.Start.job}</h1>
-				</div>
-
-				<div className="flex gap-3">
-					<Link
-						isExternal
-						href={siteConfig.links.docs}
-						className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-					>
-						Documentation
-					</Link>
-					<Link
-						isExternal
-						className={buttonStyles({ variant: "bordered", radius: "full" })}
-						href={siteConfig.links.github}
-					>
-						<GithubIcon size={20} />
-						GitHub
-					</Link>
-				</div>
-
-				<div className="mt-8">
-					<Snippet hideSymbol hideCopyButton variant="flat">
-						<span>
-							Get started by editing <Code color="primary">app/page.tsx</Code>
-						</span>
-					</Snippet>
+			<section className="col-span-10 lg:col-span-7 flex flex-col items-center gap-4 py-8 md:py-10">
+				<div className="flex flex-row items-stretch gap-8">
+					<div className="w-[150px]">
+						<Image
+							className="rounded-full"
+							src={contact.src}
+							alt="lol"
+							width={300}
+							height={300}
+						/>
+					</div>
+					<div className="flex flex-col gap-5">
+						<div className="flex flex-col max-w-2xl text-left justify-center gap-4">
+							<h1 className={title()}>{strings.Start.title}</h1>
+							<h1 className={title({ color: "blue" })}>{strings.Start.job}</h1>
+						</div>
+						<div className="flex gap-3">
+							<Link
+								isExternal
+								className={buttonStyles({ variant: "bordered", radius: "full" })}
+								href={siteConfig.links.github}
+							>
+								<GithubIcon size={20} />
+								GitHub
+							</Link>
+							<Link
+								isExternal
+								className={buttonStyles({ variant: "bordered", radius: "full" })}
+								href={siteConfig.links.github}
+							>
+								<GithubIcon size={20} />
+								GitHub
+							</Link>
+						</div>
+					</div>
 				</div>
 			</section>
+			{/* Contact card section */}
 			<section className="hidden lg:col-span-3 lg:flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-				<div className="flex flex-col max-w-2xl text-center justify-center gap-4">
-					<h1 className={title()}>{strings.Start.title}</h1>
-					<h1 className={title({ color: "blue" })}>{strings.Start.job}</h1>
-				</div>
-
-				{/* Contact card section */}
-				<div className="flex gap-3">
-					<Link
-						isExternal
-						href={siteConfig.links.docs}
-						className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-					>
-						Documentation
-					</Link>
-					<Link
-						isExternal
-						className={buttonStyles({ variant: "bordered", radius: "full" })}
-						href={siteConfig.links.github}
-					>
-						<GithubIcon size={20} />
-						GitHub
-					</Link>
-				</div>
-
-				<div className="mt-8">
-					<Snippet hideSymbol hideCopyButton variant="flat">
-						<span>
-							Get started by editing <Code color="primary">app/page.tsx</Code>
-						</span>
-					</Snippet>
-				</div>
+				<ContactCard lang={params.lang} />
 			</section>
 		</div>
 	);

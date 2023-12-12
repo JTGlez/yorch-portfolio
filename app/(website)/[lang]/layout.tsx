@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { defaultLocale } from '@/middleware';
-import "@/styles/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
@@ -8,7 +7,7 @@ import { Providers } from "../providers";
 import { Navbar } from "@/components/Navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import styles from "../Layout.module.css";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
     title: {
@@ -47,7 +46,7 @@ export default function RootLayout({
                     fontSans.variable
                 )}
             >
-                <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+                <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
                     <div className="relative flex flex-col h-screen">
                         <Navbar lang={params.lang} />
                         <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
